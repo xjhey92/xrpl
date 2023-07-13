@@ -263,7 +263,7 @@
                 var currencyCode = getCurrencyCode(tokens.issuers[token].tokens[0].currency);
                 var createdDate = new Date(Date.parse(tokens.issuers[token].tokens[0].created.date));
 
-                if (createdDate > today && CHECKED_LIST.indexOf(currencyCode) === -1) {
+                if (createdDate >= today && CHECKED_LIST.indexOf(currencyCode) === -1) {
                     var amount = tokens.issuers[token].tokens[0].amount;
                     var url = 'https://xrpl.services/?issuer=' + token + "&currency=" + currencyCode + '&limit=' + amount;
 
